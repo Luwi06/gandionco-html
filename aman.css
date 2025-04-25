@@ -1,0 +1,516 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ===== WAVE ANIMATION ===== */
+#wave-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #333;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    color: #ffbc04;
+    text-shadow: 2.5px 2.5px #ff048a, -2.5px -2.5px #04ffee
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #00ffff;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00ffff;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger icon animation */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    z-index: 101;
+}
+
+.menu-toggle.open {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        transition: 0.3s;
+        z-index: 100;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 1.5rem 0;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        font-size: 1.3rem;
+    }
+}
+
+/* ===== SECTIONS ===== */
+section {
+    min-height: 100vh;
+    padding: 8rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Video Container Styles */
+.video-container {
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.video-container:hover video {
+    transform: scale(1.02);
+}
+
+
+/* About me */
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 255, 255, 0.5);
+}
+
+/* Responsive design eme */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        margin-top: 2rem;
+    }
+    
+    .about-image img {
+        max-width: 80%;
+    }
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0);
+}
+
+#home {
+
+}
+
+#home h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(#04ffee, #ff03ff) ;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+}
+
+.animated-heading {
+    position: relative;
+    display: inline-block;
+}
+
+.animated-heading::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+    transition: width 0.8s ease, left 0.8s ease;
+    z-index: -1;
+}
+
+.animated-heading:hover::before {
+    width: 100%;
+    left: 100%;
+}
+
+.animated-heading span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.animated-heading:hover span {
+    transform: translateY(-5px);
+    color: #ffbc04;
+    text-shadow: 2.5px 2.5px #ff048a, -2.5px -2.5px #04ffee;
+}
+
+#home p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: #ccc;
+}
+
+#about {
+    background-color: rgba(10, 10, 20, 0);
+}
+
+#services {
+    background-color: rgba(15, 10, 25, 0);
+}
+
+#contact {
+    background-color: rgba(10, 15, 20, 0);
+}
+
+/* Social Links Container */
+.social-links {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 1.5rem;
+    margin-top: 2rem;
+    align-items: flex-start; /* Align to the left */
+}
+
+/* Each social media item */
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Social link container */
+.social-link {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+/* Social icon styles */
+.social-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.social-icon.hover {
+    opacity: 0;
+}
+
+/* Hover effects */
+.social-item:hover .social-icon.default {
+    opacity: 0;
+}
+
+.social-item:hover .social-icon.hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.social-item:hover {
+    transform: translateX(5px);
+}
+
+/* Social text */
+.social-text {
+    color: #ddd;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-item:hover .social-text {
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+
+/* Update your existing heading styles */
+h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Add the animation effects to all section headings */
+h2.animated-heading {
+    position: relative;
+    display: inline-block;
+}
+
+h2.animated-heading::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+    transition: width 0.8s ease, left 0.8s ease;
+    z-index: -1;
+}
+
+h2.animated-heading:hover::before {
+    width: 100%;
+    left: 100%;
+}
+
+h2.animated-heading span {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+h2.animated-heading:hover span {
+    transform: translateY(-5px);
+    color: #ffbc04;
+    text-shadow: 2.5px 2.5px #ff048a, -2.5px -2.5px #04ffee;
+}
+
+/* Keep your existing underline effect */
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, transparent);
+    transition: width 0.3s ease;
+}
+
+h2:hover::after {
+    width: 100%;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, transparent);
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 2rem;
+        transition: 0.3s;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    #home h1 {
+        font-size: 2.5rem;
+    }
+    
+    section {
+        padding: 6rem 1.5rem 3rem;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Constellation Background */
+#constellation-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind everything */
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden;
+}
+
+/* Home Section Positioning */
+#home {
+    position: relative; /* Creates new stacking context */
+    z-index: 2; /* Above constellation */
+}
+
+/* Ensure other sections stay above too */
+section {
+    position: relative;
+    z-index: 2;
+}
+
+/* If using PixiJS version */
+#constellation-bg canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}

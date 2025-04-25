@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Keep your existing head content -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGandionco UI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/6.5.2/browser/pixi.min.js"></script>
+    <link rel="stylesheet" href="aman.css">
+</head>
+<body>
+    <!-- Constellation Background -->
+    <div id="constellation-bg"></div>
+    
+    <!-- Keep all your existing content exactly as is -->
+    <div id="wave-container"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-text="LUWI G.">LUWI G.</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </div>
+    </nav>
+    
+    <!-- Home Section -->
+    <section id="home">
+        <h1 class="animated-heading">Welcome to My Universe</h1>
+        <p>Crafting your ideas, Visualizing your thoughts, Designs? you decide!</p>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="animated-heading">About Me</h2>
+                <p>I'm a passionate character designer, website programmer, & concept artist.</p>
+                <p>lives in Metro Manila, a boy with fiery will to do works of art.</p>
+            </div>
+            <div class="about-image">
+                <img src="luwipogi.jpg" alt="Luwi Gandionco">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="animated-heading">My Services</h2>
+        <p>From responsive web designing to concept art, game programming, and character designing, I offer a complete suite of digital art creation services tailored to your needs.</p>
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="fighting.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+        </div>
+
+        <p><br>My work</p>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="animated-heading">Let's Connect</h2>
+        <p>Ready to start your project? Reach out and let's create something amazing together.</p>
+        
+        <div class="social-links">
+            <div class="social-item">
+                <a href="https://www.facebook.com/luwi06" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <img src="fb.png" alt="Facebook" class="social-icon default">
+                    <img src="fbpur.png" alt="Facebook" class="social-icon hover">
+                </a>
+                <span class="social-text">Facebook: Louis Caminero Gandionco</span>
+            </div>
+            
+            <div class="social-item">
+                <a href="https://www.instagram.com/luwi0603/" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <img src="insta.png" alt="Instagram" class="social-icon default">
+                    <img src="instaor.png" alt="Instagram" class="social-icon hover">
+                </a>
+                <span class="social-text">Instagram: luwi0603</span>
+            </div>
+            <div class="social-item">
+            <img src="phone.png" alt="phone logo">
+            <span class="social-text">09515810487 / 09284705440</span>
+            </div>
+        </div>
+    </section>
+    
+    <script src="constellation.js"></script>
+    <script src="script.js"></script>
+    <script src="lala.js"></script>
+</body>
+</html>
